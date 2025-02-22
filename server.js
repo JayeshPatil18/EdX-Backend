@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 mongoose.connect("mongodb+srv://jp0916780:1234%40Abcd@cluster0.qes6n.mongodb.net/edX", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 5000, // Timeout after 5 seconds
+//   serverSelectionTimeoutMS: 5000, // Timeout after 5 seconds
 });
 
 // Log MongoDB connection status
