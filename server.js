@@ -12,10 +12,8 @@ app.use(bodyParser.json());
 mongoose.connect("mongodb+srv://jp0916780:1234%40Abcd@cluster0.qes6n.mongodb.net/edX", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-//   serverSelectionTimeoutMS: 5000, // Timeout after 5 seconds
 });
 
-// Log MongoDB connection status
 mongoose.connection.on("connected", () => {
   console.log("MongoDB Connected Successfully!");
 });
@@ -46,6 +44,11 @@ const User = mongoose.model("User", userSchema);
 const generateUID = () => {
   return `UID-${Date.now()}-${Math.floor(Math.random() * 10000)}`;
 };
+
+// ✅ Home Route - Check if API is working
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "API is working fine!" });
+});
 
 // API Endpoint to Add a User
 app.post("/addUser", async (req, res) => {
